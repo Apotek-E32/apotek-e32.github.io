@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://jihar.github.io/apotek-e32-react",
+  "homepage": "https://apotek-e32.github.io",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

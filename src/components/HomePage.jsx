@@ -3,7 +3,6 @@ import Hero from './Hero';
 import Features from './Features';
 import Products from './Products';
 import Order from './Order';
-import Careers from './Careers';
 import Contact from './Contact';
 
 const HomePage = () => {
@@ -13,7 +12,6 @@ const HomePage = () => {
       <Features />
       <Products />
       <Order />
-      <Careers />
       <Contact />
     </>
   );

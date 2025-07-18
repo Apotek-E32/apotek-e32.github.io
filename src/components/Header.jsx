@@ -46,6 +46,11 @@ const Header = () => {
     setIsMobileMenuOpen(false);
   };
 
+  const handleKarirClick = () => {
+    navigate('/karir');
+    setIsMobileMenuOpen(false);
+  };
+
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
@@ -97,7 +102,7 @@ const Header = () => {
                 <li>
                   <a href="#karir" onClick={(e) => {
                     e.preventDefault();
-                    scrollToSection('karir');
+                    handleKarirClick();
                   }}>
                     Karir
                   </a>
@@ -148,7 +153,7 @@ const Header = () => {
                 <li>
                   <a href="#karir" onClick={(e) => {
                     e.preventDefault();
-                    scrollToSection('karir');
+                    handleKarirClick();
                   }}>
                     Karir
                   </a>

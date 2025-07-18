@@ -81,17 +81,34 @@ const Footer = () => {
               <li>Layanan Antar</li>
             </ul>
           </div>
+          
+          <div className="footer-section">
+            <h4>Info Lainnya</h4>
+            <ul>
+              <li>
+                <button 
+                  onClick={() => navigate('/karir')}
+                  className="footer-link-button"
+                  style={{ padding: 0, border: 'none', background: 'none' }}
+                >
+                  Karir
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => navigate('/privacy-policy')}
+                  className="footer-link-button"
+                  style={{ padding: 0, border: 'none', background: 'none' }}
+                >
+                  Kebijakan Privasi
+                </button>
+              </li>
+            </ul>
+          </div>
         </div>
         <div className="footer-bottom">
           <p>&copy; 2025 Apotek E32. Semua hak dilindungi. | Apotek Berizin Resmi</p>
           <div className="footer-links">
-            <button 
-              onClick={() => navigate('/privacy-policy')}
-              className="footer-link-button"
-            >
-              Kebijakan Privasi
-            </button>
-            <span className="footer-separator">|</span>
             <span>PT DWI JAGAT HARMONI</span>
           </div>
         </div>
