@@ -24,7 +24,7 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'layanan', 'produk', 'order', 'kontak'];
+      const sections = ['home', 'layanan', 'produk', 'order', 'karir', 'kontak'];
       const scrollPosition = window.scrollY + 200;
 
       for (let section of sections) {
@@ -71,6 +71,11 @@ const Header = () => {
             className={activeSection === 'order' ? 'active' : ''}
             onClick={(e) => { e.preventDefault(); scrollToSection('order'); }}
           >Order</a></li>
+          <li><a 
+            href="#karir" 
+            className={activeSection === 'karir' ? 'active' : ''}
+            onClick={(e) => { e.preventDefault(); scrollToSection('karir'); }}
+          >Karir</a></li>
           <li><a 
             href="#kontak" 
             className={activeSection === 'kontak' ? 'active' : ''}

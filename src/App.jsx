@@ -9,6 +9,7 @@ import Order from './components/Order';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import WhatsAppFloat from './components/WhatsAppFloat';
+import Careers from './components/Careers';
 import { initFacebookPixel } from './utils/fbPixel';
 import './App.css';
 
@@ -28,6 +29,7 @@ function App() {
             <Features />
             <Products />
             <Order />
+            <Careers />
             <Contact />
           </main>
           <Footer />

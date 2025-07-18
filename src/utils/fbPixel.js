@@ -57,6 +57,20 @@ export const trackLead = () => {
   trackEvent('Lead');
 };
 
+export const trackJobApplication = (jobTitle) => {
+  trackEvent('SubmitApplication', {
+    content_name: jobTitle,
+    content_category: 'Job Application',
+  });
+};
+
+export const trackJobView = (jobTitle) => {
+  trackEvent('ViewContent', {
+    content_name: jobTitle,
+    content_category: 'Job Listing',
+  });
+};
+
 export default {
   initFacebookPixel,
   trackEvent,
@@ -66,4 +80,6 @@ export default {
   trackContact,
   trackViewContent,
   trackLead,
+  trackJobApplication,
+  trackJobView,
 };
