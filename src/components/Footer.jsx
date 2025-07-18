@@ -1,9 +1,13 @@
 import React from 'react';
+import { trackContact } from '../utils/fbPixel';
 import './Footer.css';
 import logoApotek from '../assets/logo-apotek-e32.jpg';
 
 const Footer = () => {
   const handleWhatsAppClick = () => {
+    // Track contact event
+    trackContact();
+    
     const message = 'Halo Apotek E32, saya ingin konsultasi';
     const whatsappUrl = `https://wa.me/62085642007123?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');

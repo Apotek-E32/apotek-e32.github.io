@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { trackContact } from '../utils/fbPixel';
 import './Contact.css';
 
 const Contact = () => {

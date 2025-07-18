@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from './contexts/ThemeContext';
 import Header from './components/Header';
@@ -9,9 +9,15 @@ import Order from './components/Order';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import WhatsAppFloat from './components/WhatsAppFloat';
+import { initFacebookPixel } from './utils/fbPixel';
 import './App.css';
 
 function App() {
+  useEffect(() => {
+    // Initialize Facebook Pixel
+    initFacebookPixel();
+  }, []);
+
   return (
     <ThemeProvider>
       <Router>

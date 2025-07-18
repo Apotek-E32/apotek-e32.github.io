@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { trackLead, trackViewContent } from '../utils/fbPixel';
 import './Order.css';
 
 const Order = () => {
@@ -13,6 +14,9 @@ const Order = () => {
   const orderRef = useRef(null);
 
   useEffect(() => {
+    // Track view content when order section is viewed
+    trackViewContent('Order Form');
+    
     const observerOptions = {
       threshold: 0.1,
       rootMargin: '0px 0px -50px 0px'
@@ -47,6 +51,9 @@ const Order = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
+    // Track lead generation
+    trackLead();
     
     const kategoriText = {
       'obat-bebas': 'Obat Bebas',
