@@ -1,0 +1,164 @@
+/* Features Section */
+.features {
+  padding: 5rem 0;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-title h2 {
+  font-size: 2.5rem;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+.section-title p {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.feature-card {
+  background: var(--bg-primary);
+  padding: 2.5rem;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  border-top: 4px solid var(--primary-color);
+  border: 1px solid var(--border-color);
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-hover);
+}
+
+.feature-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  color: white;
+  font-size: 2rem;
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover .feature-icon {
+  transform: scale(1.1);
+  box-shadow: 0 8px 25px rgba(var(--primary-color), 0.3);
+}
+
+.feature-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-dark);
+}
+
+.feature-card p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.scroll-animation {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.scroll-animation.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Smooth theme transition animations */
+.features * {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Enhanced scroll animations with stagger effect */
+.features-grid .feature-card:nth-child(1) .scroll-animation {
+  transition-delay: 0.1s;
+}
+
+.features-grid .feature-card:nth-child(2) .scroll-animation {
+  transition-delay: 0.2s;
+}
+
+.features-grid .feature-card:nth-child(3) .scroll-animation {
+  transition-delay: 0.3s;
+}
+
+.features-grid .feature-card:nth-child(4) .scroll-animation {
+  transition-delay: 0.4s;
+}
+
+.features-grid .feature-card:nth-child(5) .scroll-animation {
+  transition-delay: 0.5s;
+}
+
+.features-grid .feature-card:nth-child(6) .scroll-animation {
+  transition-delay: 0.6s;
+}
+
+/* Dark mode specific enhancements */
+[data-theme="dark"] .feature-card {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .feature-card:hover {
+  border-color: var(--primary-color);
+  background: var(--bg-secondary);
+}
+
+[data-theme="dark"] .feature-icon {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Light mode specific enhancements */
+[data-theme="light"] .feature-card {
+  background: var(--bg-primary);
+  box-shadow: var(--shadow);
+}
+
+[data-theme="light"] .feature-card:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .section-title h2 {
+    font-size: 2rem;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+}
