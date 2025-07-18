@@ -1,0 +1,372 @@
+.privacy-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  padding: 20px;
+  backdrop-filter: blur(5px);
+}
+
+.privacy-modal {
+  background: var(--card-bg);
+  border-radius: 15px;
+  max-width: 800px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-heavy);
+}
+
+.privacy-header {
+  position: sticky;
+  top: 0;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+  color: white;
+  padding: 25px 30px;
+  border-radius: 15px 15px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+
+.privacy-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.privacy-header p {
+  margin: 5px 0 0 0;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.privacy-content {
+  padding: 30px;
+}
+
+.privacy-intro {
+  margin-bottom: 30px;
+  padding: 20px;
+  background: var(--note-bg);
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+}
+
+.privacy-intro p {
+  margin: 10px 0;
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+.privacy-intro strong {
+  color: var(--primary-color);
+}
+
+.privacy-sections {
+  margin-bottom: 20px;
+}
+
+.privacy-section {
+  margin-bottom: 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+.privacy-section:hover {
+  box-shadow: var(--shadow);
+}
+
+.section-header {
+  background: var(--card-bg);
+  padding: 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.section-header:hover {
+  background: var(--note-bg);
+}
+
+.section-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--heading-color);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+}
+
+.section-header i {
+  color: var(--primary-color);
+  font-size: 1rem;
+}
+
+.section-header i.fa-chevron-up,
+.section-header i.fa-chevron-down {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.section-content {
+  padding: 20px;
+  background: var(--card-bg);
+  border-top: 1px solid var(--border-color);
+}
+
+.section-content h4 {
+  margin: 0 0 15px 0;
+  font-size: 1rem;
+  color: var(--heading-color);
+  font-weight: 600;
+}
+
+.section-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.section-content li {
+  position: relative;
+  padding: 5px 0 5px 20px;
+  color: var(--text-color);
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+.section-content li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.section-content p {
+  margin: 10px 0;
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+.section-content strong {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.company-info,
+.data-types,
+.usage-purposes,
+.security-measures,
+.user-rights,
+.cookies-info,
+.contact-info {
+  margin-bottom: 20px;
+}
+
+.company-info:last-child,
+.data-types:last-child,
+.usage-purposes:last-child,
+.security-measures:last-child,
+.user-rights:last-child,
+.cookies-info:last-child,
+.contact-info:last-child {
+  margin-bottom: 0;
+}
+
+.privacy-footer {
+  padding: 20px;
+  background: var(--note-bg);
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  text-align: center;
+  margin-top: 20px;
+}
+
+.privacy-footer p {
+  margin: 10px 0;
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+.privacy-footer strong {
+  color: var(--primary-color);
+}
+
+/* Theme Variables */
+:root {
+  --shadow-heavy: 0 25px 50px rgba(0, 0, 0, 0.2);
+  --note-bg: #f8f9fa;
+}
+
+[data-theme="dark"] {
+  --shadow-heavy: 0 25px 50px rgba(0, 0, 0, 0.5);
+  --note-bg: #2c3e50;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .privacy-overlay {
+    padding: 10px;
+  }
+  
+  .privacy-modal {
+    border-radius: 10px;
+    max-height: 95vh;
+  }
+  
+  .privacy-header {
+    padding: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .privacy-header h2 {
+    font-size: 1.3rem;
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+  }
+  
+  .privacy-content {
+    padding: 20px;
+  }
+  
+  .privacy-intro,
+  .section-content {
+    padding: 15px;
+  }
+  
+  .section-header {
+    padding: 15px;
+  }
+  
+  .section-header h3 {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .privacy-overlay {
+    padding: 0;
+  }
+  
+  .privacy-modal {
+    border-radius: 0;
+    max-height: 100vh;
+    height: 100vh;
+  }
+  
+  .privacy-header {
+    border-radius: 0;
+    padding: 15px;
+  }
+  
+  .privacy-header h2 {
+    font-size: 1.2rem;
+  }
+  
+  .privacy-content {
+    padding: 15px;
+  }
+  
+  .privacy-intro,
+  .section-content {
+    padding: 12px;
+  }
+  
+  .section-header {
+    padding: 12px;
+  }
+  
+  .section-header h3 {
+    font-size: 0.95rem;
+  }
+  
+  .section-content li {
+    font-size: 0.9rem;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .privacy-section,
+  .section-header,
+  .close-button {
+    transition: none;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .privacy-overlay {
+    position: static;
+    background: white;
+    padding: 0;
+  }
+  
+  .privacy-modal {
+    max-height: none;
+    box-shadow: none;
+    border: 1px solid #000;
+  }
+  
+  .privacy-header {
+    background: white;
+    color: black;
+    border-bottom: 2px solid #000;
+  }
+  
+  .close-button {
+    display: none;
+  }
+  
+  .section-header {
+    background: white;
+    border-bottom: 1px solid #000;
+  }
+  
+  .section-content {
+    display: block !important;
+  }
+}

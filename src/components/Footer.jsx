@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { trackContact } from '../utils/fbPixel';
+import PrivacyPolicy from './PrivacyPolicy';
 import './Footer.css';
 import logoApotek from '../assets/logo-apotek-e32.jpg';
 
 const Footer = () => {
+  const [isPrivacyPolicyOpen, setIsPrivacyPolicyOpen] = useState(false);
+  
   const handleWhatsAppClick = () => {
     // Track contact event
     trackContact();
@@ -81,8 +84,23 @@ const Footer = () => {
         </div>
         <div className="footer-bottom">
           <p>&copy; 2025 Apotek E32. Semua hak dilindungi. | Apotek Berizin Resmi</p>
+          <div className="footer-links">
+            <button 
+              onClick={() => setIsPrivacyPolicyOpen(true)}
+              className="footer-link-button"
+            >
+              Kebijakan Privasi
+            </button>
+            <span className="footer-separator">|</span>
+            <span>PT DWI JAGAT HARMONI</span>
+          </div>
         </div>
       </div>
+      
+      <PrivacyPolicy 
+        isOpen={isPrivacyPolicyOpen} 
+        onClose={() => setIsPrivacyPolicyOpen(false)} 
+      />
     </footer>
   );
 };
