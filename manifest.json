@@ -1,0 +1,22 @@
+{
+  "name": "Apotek E32 - Kesehatan Keluarga Terpercaya",
+  "short_name": "Apotek E32",
+  "description": "Apotek E32 Blitar - Menyediakan obat-obatan berkualitas, konsultasi apoteker profesional, dan layanan kesehatan terpercaya untuk keluarga Anda.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#00a86b",
+  "orientation": "portrait",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/logo-apotek-e32.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["health", "medical", "pharmacy"],
+  "lang": "id",
+  "dir": "ltr"
+}
