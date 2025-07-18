@@ -2,14 +2,10 @@ import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from './contexts/ThemeContext';
 import Header from './components/Header';
-import Hero from './components/Hero';
-import Features from './components/Features';
-import Products from './components/Products';
-import Order from './components/Order';
-import Contact from './components/Contact';
 import Footer from './components/Footer';
 import WhatsAppFloat from './components/WhatsAppFloat';
-import Careers from './components/Careers';
+import HomePage from './components/HomePage';
+import PrivacyPolicyPage from './components/PrivacyPolicyPage';
 import { initFacebookPixel } from './utils/fbPixel';
 import './App.css';
 
@@ -25,12 +21,10 @@ function App() {
         <div className="App">
           <Header />
           <main>
-            <Hero />
-            <Features />
-            <Products />
-            <Order />
-            <Careers />
-            <Contact />
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+            </Routes>
           </main>
           <Footer />
           <WhatsAppFloat />

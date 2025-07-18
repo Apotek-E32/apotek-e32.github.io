@@ -225,7 +225,7 @@ Kami dapat berbagi informasi dengan:
 
 ### 14.1 Data Protection Officer (DPO)
 - **Nama**: apt. Silvia Afra Meyningtyas S.Farm
-- **Email**: privacy@apoteke32.com
+- **Email**: apotek.etigadua@gmail.com
 - **Telepon**: 085642007123
 - **Alamat**: Jl. Raya Garum No. 14, Tawangsari, Garum, Blitar, Jawa Timur 66182
 

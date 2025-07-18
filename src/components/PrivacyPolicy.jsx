@@ -250,7 +250,7 @@ const PrivacyPolicy = ({ isOpen, onClose }) => {
                     <ul>
                       <li><strong>Nama:</strong> apt. Silvia Afra Meyningtyas S.Farm</li>
                       <li><strong>Telepon:</strong> 085642007123</li>
-                      <li><strong>Email:</strong> privacy@apoteke32.com</li>
+                      <li><strong>Email:</strong> apotek.etigadua@gmail.com</li>
                     </ul>
                     <h4>Kunjungi Kami</h4>
                     <p>Apotek E32<br/>

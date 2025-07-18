@@ -1,0 +1,386 @@
+.privacy-page {
+  min-height: 100vh;
+  padding: 120px 0 80px;
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.privacy-page-header {
+  text-align: center;
+  margin-bottom: 50px;
+  padding-bottom: 30px;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.privacy-page-header h1 {
+  font-size: 3rem;
+  color: var(--heading-color);
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.company-badge {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+  color: white;
+  padding: 20px 30px;
+  border-radius: 15px;
+  display: inline-block;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow);
+}
+
+.company-badge h2 {
+  font-size: 1.8rem;
+  margin: 0 0 5px 0;
+  font-weight: 600;
+}
+
+.company-badge p {
+  font-size: 1rem;
+  margin: 0;
+  opacity: 0.9;
+}
+
+.last-updated {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.privacy-page-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.privacy-intro {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: 15px;
+  margin-bottom: 40px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border-color);
+}
+
+.intro-text {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin: 0;
+  color: var(--text-color);
+}
+
+.privacy-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.privacy-section {
+  background: var(--card-bg);
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.privacy-section:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 25px;
+  cursor: pointer;
+  border-bottom: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.section-header:hover {
+  background: var(--hover-bg);
+}
+
+.section-header h3 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.3rem;
+  color: var(--heading-color);
+  margin: 0;
+  font-weight: 600;
+}
+
+.section-header i {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+}
+
+.section-header .fa-chevron-up,
+.section-header .fa-chevron-down {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.section-content {
+  padding: 25px;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section-content h4 {
+  color: var(--heading-color);
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.section-content ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.section-content li {
+  position: relative;
+  padding: 8px 0 8px 25px;
+  color: var(--text-color);
+  line-height: 1.6;
+  margin-bottom: 5px;
+}
+
+.section-content li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.section-content p {
+  color: var(--text-color);
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.company-info {
+  background: var(--note-bg);
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  margin-bottom: 20px;
+}
+
+.company-info h4 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+.company-info ul {
+  margin-bottom: 0;
+}
+
+.company-info li {
+  background: var(--card-bg);
+  padding: 10px 15px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+.company-info li:before {
+  content: "🏢";
+  color: var(--primary-color);
+}
+
+.contact-info {
+  background: var(--note-bg);
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  margin-top: 15px;
+}
+
+.contact-info p {
+  margin: 8px 0;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.contact-info p:last-child {
+  border-bottom: none;
+}
+
+.privacy-footer {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: 15px;
+  margin-top: 40px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border-color);
+}
+
+.privacy-footer p {
+  margin: 10px 0;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.privacy-footer p:last-child {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+/* Theme Support */
+:root {
+  --hover-bg: rgba(0, 168, 107, 0.05);
+  --note-bg: #f8f9fa;
+}
+
+[data-theme="dark"] {
+  --hover-bg: rgba(0, 168, 107, 0.1);
+  --note-bg: #2c3e50;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .privacy-page {
+    padding: 100px 0 60px;
+  }
+  
+  .privacy-page-header h1 {
+    font-size: 2.2rem;
+  }
+  
+  .company-badge {
+    padding: 15px 20px;
+  }
+  
+  .company-badge h2 {
+    font-size: 1.5rem;
+  }
+  
+  .privacy-intro {
+    padding: 20px;
+  }
+  
+  .intro-text {
+    font-size: 1rem;
+  }
+  
+  .section-header {
+    padding: 15px 20px;
+  }
+  
+  .section-header h3 {
+    font-size: 1.2rem;
+  }
+  
+  .section-content {
+    padding: 20px;
+  }
+  
+  .section-content h4 {
+    font-size: 1.1rem;
+  }
+  
+  .company-info,
+  .contact-info {
+    padding: 15px;
+  }
+  
+  .privacy-footer {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .privacy-page {
+    padding: 80px 0 40px;
+  }
+  
+  .privacy-page-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .company-badge {
+    padding: 12px 15px;
+  }
+  
+  .company-badge h2 {
+    font-size: 1.3rem;
+  }
+  
+  .privacy-intro {
+    padding: 15px;
+  }
+  
+  .section-header {
+    padding: 12px 15px;
+  }
+  
+  .section-header h3 {
+    font-size: 1.1rem;
+  }
+  
+  .section-content {
+    padding: 15px;
+  }
+  
+  .section-content h4 {
+    font-size: 1rem;
+  }
+  
+  .section-content li {
+    padding: 6px 0 6px 20px;
+    font-size: 0.95rem;
+  }
+  
+  .company-info li {
+    padding: 8px 12px;
+  }
+  
+  .privacy-footer {
+    padding: 15px;
+  }
+  
+  .privacy-footer p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .privacy-page {
+    background: white;
+    color: black;
+    padding: 20px 0;
+  }
+  
+  .section-header {
+    cursor: default;
+  }
+  
+  .section-content {
+    display: block !important;
+  }
+  
+  .company-badge {
+    background: #f0f0f0;
+    color: black;
+  }
+}

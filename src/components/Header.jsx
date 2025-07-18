@@ -1,91 +1,186 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import ThemeToggle from './ThemeToggle';
 import './Header.css';
 import logoApotek from '../assets/logo-apotek-e32.jpg';
-import ThemeToggle from './ThemeToggle';
 
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('home');
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
+    // If we're not on the home page, navigate to home first
+    if (location.pathname !== '/') {
+      navigate('/', { replace: true });
+      // Wait for navigation to complete before scrolling
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }, 100);
+    } else {
+      // If we're on the home page, scroll directly
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
     }
-    setIsMenuOpen(false);
+    setIsMobileMenuOpen(false);
   };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = ['home', 'layanan', 'produk', 'order', 'karir', 'kontak'];
-      const scrollPosition = window.scrollY + 200;
+  const handleLogoClick = () => {
+    navigate('/');
+    setIsMobileMenuOpen(false);
+  };
 
-      for (let section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const { offsetTop, offsetHeight } = element;
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            setActiveSection(section);
-            break;
-          }
-        }
-      }
-    };
+  const handlePrivacyClick = () => {
+    navigate('/privacy-policy');
+    setIsMobileMenuOpen(false);
+  };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
 
   return (
     <header className="header">
       <nav className="nav-container">
-        <div className="logo">
+        <div className="logo" onClick={handleLogoClick} style={{ cursor: 'pointer' }}>
           <img src={logoApotek} alt="Logo Apotek E32" className="logo-image" />
           <span className="logo-text">Apotek E32</span>
         </div>
-        <ul className={`nav-menu ${isMenuOpen ? 'nav-menu-open' : ''}`}>
-          <li><a 
-            href="#home" 
-            className={activeSection === 'home' ? 'active' : ''}
-            onClick={(e) => { e.preventDefault(); scrollToSection('home'); }}
-          >Beranda</a></li>
-          <li><a 
-            href="#layanan" 
-            className={activeSection === 'layanan' ? 'active' : ''}
-            onClick={(e) => { e.preventDefault(); scrollToSection('layanan'); }}
-          >Layanan</a></li>
-          <li><a 
-            href="#produk" 
-            className={activeSection === 'produk' ? 'active' : ''}
-            onClick={(e) => { e.preventDefault(); scrollToSection('produk'); }}
-          >Produk</a></li>
-          <li><a 
-            href="#order" 
-            className={activeSection === 'order' ? 'active' : ''}
-            onClick={(e) => { e.preventDefault(); scrollToSection('order'); }}
-          >Order</a></li>
-          <li><a 
-            href="#karir" 
-            className={activeSection === 'karir' ? 'active' : ''}
-            onClick={(e) => { e.preventDefault(); scrollToSection('karir'); }}
-          >Karir</a></li>
-          <li><a 
-            href="#kontak" 
-            className={activeSection === 'kontak' ? 'active' : ''}
-            onClick={(e) => { e.preventDefault(); scrollToSection('kontak'); }}
-          >Kontak</a></li>
-        </ul>
+        
         <div className="header-controls">
+          <ul className={`nav-menu ${isMobileMenuOpen ? 'nav-menu-open' : ''}`}>
+            {location.pathname === '/' ? (
+              <>
+                <li>
+                  <a href="#home" onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('home');
+                  }}>
+                    Beranda
+                  </a>
+                </li>
+                <li>
+                  <a href="#layanan" onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('layanan');
+                  }}>
+                    Layanan
+                  </a>
+                </li>
+                <li>
+                  <a href="#produk" onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('produk');
+                  }}>
+                    Produk
+                  </a>
+                </li>
+                <li>
+                  <a href="#order" onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('order');
+                  }}>
+                    Order
+                  </a>
+                </li>
+                <li>
+                  <a href="#karir" onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('karir');
+                  }}>
+                    Karir
+                  </a>
+                </li>
+                <li>
+                  <a href="#kontak" onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('kontak');
+                  }}>
+                    Kontak
+                  </a>
+                </li>
+              </>
+            ) : (
+              <>
+                <li>
+                  <a href="/" onClick={(e) => {
+                    e.preventDefault();
+                    navigate('/');
+                  }}>
+                    Beranda
+                  </a>
+                </li>
+                <li>
+                  <a href="#layanan" onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('layanan');
+                  }}>
+                    Layanan
+                  </a>
+                </li>
+                <li>
+                  <a href="#produk" onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('produk');
+                  }}>
+                    Produk
+                  </a>
+                </li>
+                <li>
+                  <a href="#order" onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('order');
+                  }}>
+                    Order
+                  </a>
+                </li>
+                <li>
+                  <a href="#karir" onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('karir');
+                  }}>
+                    Karir
+                  </a>
+                </li>
+                <li>
+                  <a href="#kontak" onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('kontak');
+                  }}>
+                    Kontak
+                  </a>
+                </li>
+              </>
+            )}
+            <li>
+              <a href="/privacy-policy" onClick={(e) => {
+                e.preventDefault();
+                handlePrivacyClick();
+              }}>
+                Kebijakan Privasi
+              </a>
+            </li>
+          </ul>
+          
           <ThemeToggle />
-          <button className="mobile-menu" onClick={toggleMenu}>
-            <i className="fas fa-bars"></i>
+          
+          <button 
+            className="mobile-menu" 
+            onClick={toggleMobileMenu}
+            aria-label="Toggle mobile menu"
+          >
+            <i className={`fas ${isMobileMenuOpen ? 'fa-times' : 'fa-bars'}`}></i>
           </button>
         </div>
       </nav>
