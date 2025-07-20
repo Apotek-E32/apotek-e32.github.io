@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { trackLead, trackViewContent } from '../utils/fbPixel';
+import { trackFormSubmission, trackServiceInquiry } from '../utils/analytics';
 import './Order.css';
 
 const Order = () => {
@@ -14,8 +14,8 @@ const Order = () => {
   const orderRef = useRef(null);
 
   useEffect(() => {
-    // Track view content when order section is viewed
-    trackViewContent('Order Form');
+    // Track service inquiry when order section is viewed
+    trackServiceInquiry('Order Form');
     
     const observerOptions = {
       threshold: 0.1,
@@ -52,8 +52,11 @@ const Order = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    // Track lead generation
-    trackLead();
+    // Track form submission
+    trackFormSubmission('order_form', {
+      category: formData.kategori,
+      product: formData.produk,
+    });
     
     const kategoriText = {
       'obat-bebas': 'Obat Bebas',

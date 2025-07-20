@@ -7,13 +7,13 @@ import WhatsAppFloat from './components/WhatsAppFloat';
 import HomePage from './components/HomePage';
 import PrivacyPolicyPage from './components/PrivacyPolicyPage';
 import CareersPage from './components/CareersPage';
-import { initFacebookPixel } from './utils/fbPixel';
+import { initAnalytics } from './utils/analytics';
 import './App.css';
 
 function App() {
   useEffect(() => {
-    // Initialize Facebook Pixel
-    initFacebookPixel();
+    // Initialize all analytics (Facebook Pixel + Google Analytics)
+    initAnalytics();
   }, []);
 
   return (

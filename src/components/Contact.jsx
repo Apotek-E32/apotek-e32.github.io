@@ -1,11 +1,13 @@
 import React, { useEffect, useRef } from 'react';
-import { trackContact } from '../utils/fbPixel';
+import { trackContact, trackWhatsAppInteraction, trackPhoneCall, trackLocationView } from '../utils/analytics';
 import './Contact.css';
 
 const Contact = () => {
   const contactRef = useRef([]);
 
   const openGoogleMaps = () => {
+    // Track location view
+    trackLocationView();
     const googleMapsUrl = 'https://maps.app.goo.gl/Pia3MYF8Tzamg6t4A';
     window.open(googleMapsUrl, '_blank');
   };

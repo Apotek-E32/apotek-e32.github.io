@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { trackContact } from '../utils/fbPixel';
+import { trackWhatsAppInteraction } from '../utils/analytics';
 import './Footer.css';
 import logoApotek from '../assets/logo-apotek-e32.jpg';
 
@@ -8,8 +8,8 @@ const Footer = () => {
   const navigate = useNavigate();
   
   const handleWhatsAppClick = () => {
-    // Track contact event
-    trackContact();
+    // Track WhatsApp interaction
+    trackWhatsAppInteraction('footer');
     
     const message = 'Halo Apotek E32, saya ingin konsultasi';
     const whatsappUrl = `https://wa.me/62085642007123?text=${encodeURIComponent(message)}`;

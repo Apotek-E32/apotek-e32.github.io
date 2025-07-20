@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { trackJobView, trackJobApplication } from '../utils/fbPixel';
+import { trackJobView, trackJobApplication } from '../utils/analytics';
 import { useTheme } from '../contexts/ThemeContext';
 import lokerImage from '../assets/loker-apotek-blitar.png';
 import './Careers.css';

@@ -487,17 +487,72 @@
   100% { transform: rotate(360deg); }
 }
 
-/* Theme Support */
-:root {
-  --note-bg: #f8f9fa;
-  --input-bg: #ffffff;
-  --shadow-heavy: 0 25px 50px rgba(0, 0, 0, 0.15);
+/* Component-specific enhancements for better dark mode readability */
+[data-theme="dark"] .form-group input:focus,
+[data-theme="dark"] .form-group select:focus,
+[data-theme="dark"] .form-group textarea:focus {
+  box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.2);
 }
 
-[data-theme="dark"] {
-  --note-bg: #2c3e50;
-  --input-bg: #1e293b;
-  --shadow-heavy: 0 25px 50px rgba(0, 0, 0, 0.5);
+[data-theme="dark"] .form-group input,
+[data-theme="dark"] .form-group select,
+[data-theme="dark"] .form-group textarea {
+  border-color: #64748b;
+}
+
+[data-theme="dark"] .form-group input:hover,
+[data-theme="dark"] .form-group select:hover,
+[data-theme="dark"] .form-group textarea:hover {
+  border-color: #94a3b8;
+}
+
+/* Enhanced label visibility in dark mode */
+[data-theme="dark"] .form-group label {
+  color: #f8fafc;
+  font-weight: 700;
+}
+
+[data-theme="dark"] .modal-overlay {
+  background: rgba(0, 0, 0, 0.92);
+}
+
+/* Enhanced text readability for all sections */
+[data-theme="dark"] .job-section li {
+  color: #e2e8f0;
+}
+
+[data-theme="dark"] .job-meta span {
+  color: #cbd5e1;
+}
+
+[data-theme="dark"] .form-note {
+  color: #cbd5e1;
+  background: #475569;
+}
+
+[data-theme="dark"] .highlight-item p {
+  color: #cbd5e1;
+}
+
+[data-theme="dark"] .careers-contact-section p {
+  color: #cbd5e1;
+}
+
+[data-theme="dark"] .contact-item {
+  color: #e2e8f0;
+}
+
+/* Enhanced placeholder text visibility */
+[data-theme="dark"] .form-group input::placeholder,
+[data-theme="dark"] .form-group textarea::placeholder {
+  color: #94a3b8;
+  opacity: 1;
+}
+
+/* Better select option styling */
+[data-theme="dark"] .form-group select option {
+  background-color: #334155;
+  color: #f1f5f9;
 }
 
 /* Responsive Design */
