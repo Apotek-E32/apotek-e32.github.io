@@ -1,7 +1,7 @@
 import ReactPixel from 'react-facebook-pixel';
 
 // Get Meta Pixel ID from environment variables
-const PIXEL_ID = import.meta.env.VITE_META_PIXEL_ID || '1010602900961745';
+const PIXEL_ID = import.meta.env.VITE_META_PIXEL_ID || '1539647443680453';
 
 const options = {
   autoConfig: true, // set pixel's autoConfig
